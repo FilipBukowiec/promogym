@@ -1,0 +1,75 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.settings-box {
+  width: 700px;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  display: flex;
+}
+
+.radio-list {
+  display: flex;
+}
+
+table {
+  text-align: center;
+}
+
+td {
+  text-align: left;
+//   word-break: break-all;
+}
+
+.icons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.new-record {
+  background-color: rgb(179, 5, 5);
+}
+
+h4 {
+  margin-top: 20px;
+  color: rgb(179, 5, 5);
+}
+
+th {
+  text-align: center;
+
+}
+
+.settings-header {
+  text-align: center;
+}
+
+.save-btn {
+  margin-bottom: 20px;
+}
+
+

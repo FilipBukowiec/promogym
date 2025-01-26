@@ -1,0 +1,32 @@
+<app-navbar>
+  <ul>
+    <li>
+      <a [routerLink]="['./admin-settings']" routerLinkActive="router-link-active">
+        General settings
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['./admin-news']" routerLinkActive="router-link-active">
+        News
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['./admin-media']" routerLinkActive="router-link-active">
+        Media
+      </a>
+    </li>
+
+
+    <li>
+      <a [routerLink]="['./admin-announcements']" routerLinkActive="router-link-active">
+        Announcements
+      </a>
+    </li>
+       <li>
+      <a [routerLink]="['/homepage']" routerLinkActive="router-link-active" (click)="logOut()">
+        Logout
+      </a>
+    </li>
+  </ul>
+</app-navbar>
+<router-outlet></router-outlet>

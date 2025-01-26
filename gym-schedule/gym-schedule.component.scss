@@ -1,0 +1,25 @@
+@use '../../shared/navbar.styles.scss';
+
+
+:host{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  
+}
+
+
+
+
+iframe{
+    position: absolute;
+    transform: translateY(-100px);
+// height: 100%;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
+}

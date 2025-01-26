@@ -1,0 +1,88 @@
+<div class="side-menu">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+       </button>
+
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <img class="logo-menu" src="../../../assets/images/promogym_logo.svg">
+            <ul class="navbar-nav flex-grow-1 ">
+                <li class="nav-item">
+                    <a class="nav-link active" [routerLink]="['/homepage']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/start']" (click)="onStartClick($event)"
+                        data-bs-dismiss="offcanvas">
+                        {{ isOnStartPage ? 'Refresh app' : 'Start app' }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/news']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas">
+                        News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/gym-schedule']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas">
+                        Gym schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/events']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas">
+                        Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas">
+                        About app</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/cooperation']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas">
+                        Cooperation</a>
+                </li>
+
+            
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas">
+                        Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-dismiss="offcanvas" (click)="toggleFullscreen()">
+                        {{ (isFullscreen$ | async) ? "Exit FullScreen" : "Go FullScreen" }}</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn">
+                    <a class="nav-link" [routerLink]="['/homepage']" routerLinkActive="router-link-active"
+                        data-bs-dismiss="offcanvas" (click)="logOut()">
+
+                        Logout</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" data-bs-dismiss="offcanvas" (click)="toggleStream()">
+                        {{ radioStreamService.isStreamPlaying() ? 'Stop stream' : 'Play stream' }}
+                    
+                    </a>
+
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-dismiss="offcanvas" (click)="toggleAnnouncement()">
+                        {{ (isPlaying$ | async) ? 'Stop Announcement' : 'Play Announcement' }}
+                    </a>
+                </li>
+               
+
+            </ul>
+        </div>
+    </div>
+</div>

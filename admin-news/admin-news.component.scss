@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .news{
+    display: flex;
+    width: 95%;
+  }
+  td > input{
+    width: 95%;
+  
+  }
+
+
+  table{
+    width: 700px;
+  }
+
+  td{
+    text-align: justify;
+  }
+  
+

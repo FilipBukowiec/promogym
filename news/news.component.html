@@ -1,0 +1,15 @@
+
+<app-navbar></app-navbar>
+<div class="news-container">
+  <div *ngFor="let news of newsList" class="news-card">
+
+    <img class="logo" src="/assets/images/cfb.svg" alt="">
+
+    <div class="image-container">
+    </div>
+
+    <p class="news-content">{{ news.content }}</p>
+
+
+  </div>
+</div>

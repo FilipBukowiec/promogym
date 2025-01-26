@@ -1,0 +1,138 @@
+<div class="settings-box">
+  <table>
+    <tr>
+      <td colspan="3" class="settings-header">
+        <h4>Radio settings</h4>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Select a radio stream:</td>
+      <td colspan="2">
+        <select name="" id="" [(ngModel)]="settings.selectedRadioStream">
+          <option *ngFor="let radio of settings.radioStreamList" [value]="radio.url">
+            {{ radio.description }}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="3">Available radio streams:</th>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <th>Stream URL</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let radio of settings.radioStreamList; let i = index">
+      <td>
+        <ng-container *ngIf="editRadioStreamIndex === i; else displayDescription">
+          <input type="text" [(ngModel)]="radio.description" />
+        </ng-container>
+        <ng-template #displayDescription>
+          {{ radio.description }}
+        </ng-template>
+      </td>
+
+      <td class="break-td">
+        <ng-container *ngIf="editRadioStreamIndex === i; else displayUrl">
+          <input type="text" [(ngModel)]="radio.url" />
+        </ng-container>
+        <ng-template #displayUrl>
+          {{ radio.url }}
+        </ng-template>
+      </td>
+      <td>
+        <div class="icons">
+          <i class="bi bi-pencil-fill" *ngIf="editRadioStreamIndex !== i" (click)="editRadioStream(i)"></i>
+          <i class="bi bi-floppy-fill" *ngIf="editRadioStreamIndex == i" (click)="saveRadioStream(i)"></i>
+            <i class="bi bi-trash3-fill" (click)="deleteRadioStream(i)"></i>
+              <i class="bi bi-play-fill"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="new-record">
+      <td>
+        <input [(ngModel)]="newRadioDescription" type="text" placeholder="Enter radio description"
+          [value]="newRadioDescription" />
+      </td>
+      <td>
+        <input [(ngModel)]="newRadioUrl" type="text" placeholder="Enter stream URL" [value]="newRadioUrl" />
+      </td>
+      <td>
+        <button (click)="addRadioStream()">Add Stream</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3" class="settings-header">
+        <h4>Main app settings</h4>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3">
+        Set picture slide duration:
+        <select name="" id="" [(ngModel)]="settings.pictureSlideDuration">
+          <option *ngFor="let seconds of time" [value]="seconds">
+            {{ seconds }}
+          </option>
+        </select>
+        seconds per slide
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="2">Footer visibility rules:</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let rule of settings.footerVisibilityRules; let i = index">
+      <td colspan="2">
+        <ng-container *ngIf="editFooterVisibilityIndex === i; else displayRule">
+          Footer visible from minute
+          <select [(ngModel)]="rule.startMinute" id="">
+            <option *ngFor="let minute of time" [value]="minute">
+              {{ minute }}
+            </option>
+          </select>
+          to minute
+          <select [(ngModel)]="rule.endMinute" id="">
+            <option *ngFor="let minute of time" [value]="minute">
+              {{ minute }}
+            </option>
+          </select>
+        </ng-container>
+        <ng-template #displayRule>Footer visible from minute {{ rule.startMinute }} to minute
+          {{ rule.endMinute }}</ng-template>
+      </td>
+      <td>
+        <div class="icons">
+          <i class="bi bi-pencil-fill" *ngIf="editFooterVisibilityIndex !== i" (click)="editFooterVisibilityRule(i)"></i>
+            <i class="bi bi-floppy-fill" *ngIf="editFooterVisibilityIndex === i" (click)="saveFooterVisibilityRule(i)"></i>
+              <i class="bi bi-trash3-fill" (click)="deleteFooterVisibilityRule(i)"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="3">Add new visivility footer rules</th>
+    </tr>
+    <tr class="new-record">
+      <td colspan="2">
+        Footer visible from minute
+        <select [(ngModel)]="newStartMinute">
+          <option *ngFor="let minute of time" [value]="minute">
+            {{ minute }}
+          </option>
+        </select>to minute
+        <select select [(ngModel)]="newEndMinute">
+          <option *ngFor="let minute of time" [value]="minute">
+            {{ minute }}
+          </option>
+        </select>
+      </td>
+      <td><button (click)="addFooterVisibilityRule()">Add rule</button></td>
+    </tr>
+  </table>
+</div>
+
+<button class="save-btn" (click)="saveSettings()">Save settings</button>

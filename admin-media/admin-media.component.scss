@@ -1,0 +1,34 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+  
+  
+  td{
+    word-break: break-all;
+    }
+  
+  .media {
+    width: 192px;
+    height: 108px;
+    // border-radius: 50%;
+    object-fit: cover;
+  }
+  
+
+  
+  .photo-container{
+    display: flex;
+    justify-content: center;
+  }
+  
+  table{
+    width: 700px;
+  }
+
+
+  .action{
+    display: flex;
+  }

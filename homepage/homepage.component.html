@@ -1,0 +1,9 @@
+<video #videoElement class="movie" src="/assets/images/home_bg.mp4" muted></video>
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div class="start-box" *ngIf="isVideoEnded">
+    <img src="/assets/images/promogym_logo.svg " alt="" class="logo">
+    <a [routerLink]="['/start']" routerLinkActive="router-link-active">Start app</a>
+    <a (click)="toggleFullscreen()">
+        {{ (isFullscreen$ |async) ? "Exit FullScreen" : "Go FullScreen" }}</a>
+</div>

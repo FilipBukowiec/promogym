@@ -1,0 +1,75 @@
+:host {
+  position: absolute;
+  display: flex;
+  z-index: 1500;
+}
+
+.btn-close {
+  background-color: white !important;
+}
+
+.btn-close:hover {
+  background-color: rgba(33, 117, 226, 0.863)!important;
+}
+
+.logo-menu {
+  height: 12rem;
+}
+
+.navbar-toggler {
+  margin: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background-color: transparent !important;
+}
+
+.side-menu {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// menu container
+.offcanvas {
+  width: 250px !important ;
+  background-color: rgb(4, 4, 4) !important;
+  overflow: auto;
+}
+
+.offcanvas-header {
+  height: 5rem !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.offcanvas-body ul {
+  margin: 0 !important;
+  padding: 10px;
+  width: 100%;
+}
+
+.offcanvas-body {
+  margin-top: 5rem;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.logo-menu {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  padding-left: 30px;
+}
+
+i {
+  font-size: 2rem;
+}

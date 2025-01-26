@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-field">
+  <img src="/assets/images/promogym_logo.svg" alt="" class="logo" />
+
+  <input [(ngModel)]="username" name="username" required placeholder="Login" />
+
+  <input
+    [(ngModel)]="password"
+    name="password"
+    type="password"
+    required
+    placeholder="Password"
+  />
+
+  <button type="submit">Login</button>
+</form>
