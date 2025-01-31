@@ -61,8 +61,8 @@ export class NewsTickerComponent implements AfterViewInit, OnDestroy {
       this.newsList.map((news) => () => news.content),
       () => {
         const $separator = document.createElement('img');
-        $separator.src = '/assets/images/cfb.svg';
-        $separator.style.height = '6rem';
+        $separator.src = '/assets/images/promogym_logo1.svg';
+        $separator.style.height = '4.5rem';
         $separator.style.padding = '0 3rem';
         $separator.style.paddingBottom = '0.5rem';
 

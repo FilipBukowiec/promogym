@@ -3,7 +3,13 @@
 
 <div class="start-box" *ngIf="isVideoEnded">
     <img src="/assets/images/promogym_logo.svg " alt="" class="logo">
-    <a [routerLink]="['/start']" routerLinkActive="router-link-active">Start app</a>
+    <!-- <a [routerLink]="['/start']" routerLinkActive="router-link-active">Start app</a> -->
+<a *ngIf="!(isLoggedIn$ | async)" (click)="auth.loginWithRedirect()">Login</a>
+<a *ngIf="isLoggedIn$ | async" (click)="start()">Start app</a>
+
+
+<a *ngIf="isLoggedIn$ | async" (click)="logout()">Wyloguj się</a>
+
     <a (click)="toggleFullscreen()">
         {{ (isFullscreen$ |async) ? "Exit FullScreen" : "Go FullScreen" }}</a>
 </div>
